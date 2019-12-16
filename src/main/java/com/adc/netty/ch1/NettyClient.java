@@ -16,7 +16,7 @@ public class NettyClient {
         client.group(new NioEventLoopGroup())
                 .channel(NioSocketChannel.class)
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 3000)
-                .handler(new ChannelInitializer<>() {
+                .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
 
@@ -24,7 +24,7 @@ public class NettyClient {
                 });
 
         // TODO 实现指数退避的失败重连
-        client.connect("juejin.im", 81).addListener(new GenericFutureListener<Future<? super Void>>() {
+        client.connect("juejin.im", 80).addListener(new GenericFutureListener<Future<? super Void>>() {
             @Override
             public void operationComplete(Future<? super Void> future) throws Exception {
                 if (future.isSuccess()) {

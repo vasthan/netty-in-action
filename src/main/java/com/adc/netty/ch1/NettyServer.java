@@ -20,13 +20,13 @@ public class NettyServer {
                 .channel(NioServerSocketChannel.class)
                 .attr(AttributeKey.newInstance("serverName"), "nettyServer")
                 .childAttr(AttributeKey.newInstance("key"), "value")
-                .handler(new ChannelInitializer<>() {
+                .handler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel ch) throws Exception {
                         System.out.printf("%s启动中...\n", ch.attr(AttributeKey.valueOf("serverName")));
                     }
                 })
-                .childHandler(new ChannelInitializer<>() {
+                .childHandler(new ChannelInitializer<Channel>() {
                     protected void initChannel(Channel channel) throws Exception {
                         System.out.println(channel.attr(AttributeKey.valueOf("key")));
                     }

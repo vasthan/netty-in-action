@@ -53,9 +53,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-<!--                    <compilerArgument>&#45;&#45;enable-preview</compilerArgument>-->
-                    <source>13</source>
-                    <target>13</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
