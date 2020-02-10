@@ -1,4 +1,4 @@
-package com.adc.netty.ch1;
+package com.adc.shandianxianetty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
