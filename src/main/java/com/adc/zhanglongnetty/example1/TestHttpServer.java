@@ -6,6 +6,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
+/**
+ * netty http服务器
+ */
 public class TestHttpServer {
 
     public static void main(String[] args) throws Exception {
