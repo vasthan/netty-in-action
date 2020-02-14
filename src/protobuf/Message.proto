@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+package com.adc.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "com.adc.zhanglongnetty.example6";
+option java_outer_classname = "DataInfo";
+
+message Message {
+
+    enum MessageType {
+        Apple = 1;
+        Banana = 2;
+        Orange = 3;
+    }
+
+    required MessageType message_type = 1;
+
+    oneof MessageBody {
+        Apple apple = 2;
+        Banana banana = 3;
+        Orange orange = 4;
+    }
+}
+
+message Apple {
+    optional string color = 1;
+    optional int32 weight = 2;
+}
+
+message Banana {
+    optional string color = 1;
+    optional int32 price = 2;
+}
+
+message Orange {
+    optional string color = 1;
+    optional string address = 2;
+}
