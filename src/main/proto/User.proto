@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.adc.grpc;
+
+option java_package = "com.adc.grpc";
+option java_outer_classname = "DataInfo";
+option java_multiple_files = true;
+
+message UserRequest {
+    string username = 1;
+}
+
+message UserResponse {
+    string username = 1;
+    string realname = 2;
+}
+
+service UserService {
+    rpc GetUserByUsername(UserRequest) returns (UserResponse) {}
+}
